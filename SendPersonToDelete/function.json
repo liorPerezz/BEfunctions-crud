@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "delete"
+      ],
+      "route": "test/{personId}"
+
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "personqueue",
+      "type": "queue",
+      "direction": "out",
+      "queueName": "person-queue"
+    }
+    
+  ],
+  "scriptFile": "../dist/SendPersonToDelete/index.js"
+}

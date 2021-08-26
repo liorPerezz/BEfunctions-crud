@@ -8,7 +8,7 @@ const createPerson: AzureFunction = async (
 ): Promise<void> => {
   try {
     await getConnection();
-    const person = await PersonModel.create(req.body);
+    await PersonModel.create(req.body);
     // findPerson: const person111 = await PersonModel.findById(person.id);
   } catch (err) {
     console.log(`couldnt create person ${err}`);

@@ -1,17 +1,18 @@
-import { AzureFunction, Context, HttpRequest } from "@azure/functions"
+import { AzureFunction, Context, HttpRequest } from '@azure/functions';
+import { PersonModel } from '../shared/personUser/person.model';
+import getConnection from '../shared/mogoose';
 
-const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-    context.log('HTTP trigger function processed a request.');
-    // const name = (req.query.name || (req.body && req.body.name));
-    // const responseMessage = name
-    //     ? "Hello, " + name + ". This HTTP triggered function executed successfully."
-    //     : "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.";
-
-    // context.res = {
-    //     // status: 200, /* Defaults to 200 */
-    //     body: responseMessage
-    // };
-
+const createPerson: AzureFunction = async (
+  context: Context,
+  req: HttpRequest
+): Promise<void> => {
+  try {
+    await getConnection();
+    const person = await PersonModel.create(req.body);
+    // findPerson: const person111 = await PersonModel.findById(person.id);
+  } catch (err) {
+    console.log(`couldnt create person ${err}`);
+  }
 };
 
-export default httpTrigger;
+export default createPerson;

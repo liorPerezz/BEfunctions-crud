@@ -3,12 +3,12 @@ import { GroupModel } from '../shared/groupUser/group.model';
 
 const queueTrigger: AzureFunction = async function (
   context: Context,
-  myQueueItem: string
+  groupsIdsQueue: string
 ): Promise<void> {
-  context.log('Queue :', myQueueItem);
+  context.log('Queue :', groupsIdsQueue);
   context.log(
     'erased',
-    await GroupModel.deleteOne({ _id: myQueueItem }).exec()
+    await GroupModel.deleteOne({ _id: groupsIdsQueue }).exec()
   );
 };
 

@@ -3,12 +3,12 @@ import { PersonModel } from '../shared/personUser/person.model';
 
 const queueTrigger: AzureFunction = async function (
   context: Context,
-  myQueueItem: string
+  peopleIdsQueue: string
 ): Promise<void> {
-  context.log('Queue :', myQueueItem);
+  context.log('Queue :', peopleIdsQueue);
   context.log(
     'erased',
-    await PersonModel.deleteOne({ _id: myQueueItem }).exec()
+    await PersonModel.deleteOne({ _id: peopleIdsQueue }).exec()
   );
 };
 

@@ -1,7 +1,7 @@
 {
   "bindings": [
     {
-      "name": "myQueueItem",
+      "name": "groupsIdsQueue",
       "type": "queueTrigger",
       "direction": "in",
       "queueName": "group-queue",

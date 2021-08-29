@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-// import { IGroup } from './group.interface';
 
 const groupSchema = new mongoose.Schema({
   id: mongoose.Schema.Types.String,

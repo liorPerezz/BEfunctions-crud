@@ -9,7 +9,6 @@ const findPerson: AzureFunction = async function (
   try {
     await getConnection();
     const person = await PersonModel.findById(context.bindingData.personId);
-    // console.log('found person :', person);
     return person;
   } catch (err) {
     console.log(`couldnt find person ${err}`);

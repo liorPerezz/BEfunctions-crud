@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "delete"
+      ],
+      "route": "test/{groupId}"
+
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "groupqueue",
+      "type": "queue",
+      "direction": "out",
+      "queueName": "group-queue"
+    }
+    
+  ],
+  "scriptFile": "../dist/SendGroupToDelete/index.js"
+}

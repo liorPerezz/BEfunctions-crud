@@ -4,7 +4,7 @@ import getConnection from '../shared/mogoose';
 
 
 const createGroup: AzureFunction = async (
-    context: Context,
+    _context: Context,
     req: HttpRequest
   ): Promise<void> => {
     try {

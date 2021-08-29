@@ -3,7 +3,7 @@ import { PersonModel } from '../shared/personUser/person.model';
 import getConnection from '../shared/mogoose';
 
 const createPerson: AzureFunction = async (
-  context: Context,
+  _context: Context,
   req: HttpRequest
 ): Promise<void> => {
   try {

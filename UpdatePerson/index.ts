@@ -14,7 +14,7 @@ const updatePerson: AzureFunction = async function (context: Context, req: HttpR
        const updatedPerson = req.body
     //    console.log('newwww' , updatedPerson);
        
-       const ppp=  await PersonModel.updateOne({personName : currentPerson.name }, { newPersonName: updatedPerson.name}).exec() 
+       const ppp=  await PersonModel.findByIdAndUpdate(currentPersonId,updatedPerson,{new:true}).exec() 
        console.log( 'i hope this works ',ppp)
      }
    catch(err){

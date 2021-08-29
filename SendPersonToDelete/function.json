@@ -8,7 +8,7 @@
       "methods": [
         "delete"
       ],
-      "route": "test/{personId}"
+      "route": "person/{personId}"
 
     },
     {

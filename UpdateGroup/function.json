@@ -8,7 +8,7 @@
       "methods": [
         "put"
       ],
-      "route": "test/{groupId}"
+      "route": "group/{groupId}"
     },
     {
       "type": "http",

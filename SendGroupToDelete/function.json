@@ -8,7 +8,7 @@
       "methods": [
         "delete"
       ],
-      "route": "test/{groupId}"
+      "route": "group/{groupId}"
 
     },
     {

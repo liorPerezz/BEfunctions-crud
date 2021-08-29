@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-import { PersonDocument } from './person.interface';
+// import { PersonDocument } from './person.interface';
 
 const personSchema = new mongoose.Schema({
   name: mongoose.Schema.Types.String,

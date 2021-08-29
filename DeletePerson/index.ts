@@ -1,7 +1,7 @@
 import { AzureFunction, Context } from '@azure/functions';
 import { PersonModel } from '../shared/personUser/person.model';
 
-const queueTrigger: AzureFunction = async function (
+const deletePerson: AzureFunction = async function (
   context: Context,
   peopleIdsQueue: string
 ): Promise<void> {
@@ -12,4 +12,4 @@ const queueTrigger: AzureFunction = async function (
   );
 };
 
-export default queueTrigger;
+export default deletePerson;

@@ -1,7 +1,7 @@
 import { AzureFunction, Context } from '@azure/functions';
 import { GroupModel } from '../shared/groupUser/group.model';
 
-const queueTrigger: AzureFunction = async function (
+const deleteGroup: AzureFunction = async function (
   context: Context,
   groupsIdsQueue: string
 ): Promise<void> {
@@ -12,4 +12,4 @@ const queueTrigger: AzureFunction = async function (
   );
 };
 
-export default queueTrigger;
+export default deleteGroup;

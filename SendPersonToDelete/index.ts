@@ -7,6 +7,7 @@ const sendPerson: AzureFunction = async function (context: Context, req: HttpReq
         await getConnection();
         const personId = context.bindingData.personId;
         context.bindings.personqueue = personId;
+     
     }
    catch(err){
     console.log(`couldnt create person ${err}`);

@@ -6,10 +6,9 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "post"
+        "put"
       ],
-      "route": "test/"
-
+      "route": "group/{groupId}"
     },
     {
       "type": "http",
@@ -17,5 +16,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/CreatePerson/index.js"
+  "scriptFile": "../dist/UpdateGroup/index.js"
 }

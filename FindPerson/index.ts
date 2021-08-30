@@ -2,16 +2,17 @@ import { AzureFunction, Context, HttpRequest } from '@azure/functions';
 import { PersonModel } from '../shared/personUser/person.model';
 import getConnection from '../shared/mogoose';
 
-const createPerson: AzureFunction = async (
-  _context: Context,
+const findPerson: AzureFunction = async function (
+  context: Context,
   req: HttpRequest
-): Promise<void> => {
+): Promise<void> {
   try {
     await getConnection();
-    await PersonModel.create(req.body);
+    const person = await PersonModel.findById(context.bindingData.personId);
+    return person;
   } catch (err) {
-    console.log(`couldnt create person ${err}`);
+    console.log(`couldnt find person ${err}`);
   }
 };
 
-export default createPerson;
+export default findPerson;

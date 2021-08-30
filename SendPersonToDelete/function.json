@@ -6,16 +6,23 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "post"
+        "delete"
       ],
-      "route": "test/"
+      "route": "person/{personId}"
 
     },
     {
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "name": "personqueue",
+      "type": "queue",
+      "direction": "out",
+      "queueName": "person-queue"
     }
+    
   ],
-  "scriptFile": "../dist/CreatePerson/index.js"
+  "scriptFile": "../dist/SendPersonToDelete/index.js"
 }

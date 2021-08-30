@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import { connect } from 'mongoose';
-import config from './config';
+import config from '../config';
 let dbConnection: mongoose.Connection;
 
 const connectToMongo = async () => {

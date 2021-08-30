@@ -6,16 +6,23 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "post"
+        "delete"
       ],
-      "route": "test/"
+      "route": "group/{groupId}"
 
     },
     {
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "name": "groupqueue",
+      "type": "queue",
+      "direction": "out",
+      "queueName": "group-queue"
     }
+    
   ],
-  "scriptFile": "../dist/CreatePerson/index.js"
+  "scriptFile": "../dist/SendGroupToDelete/index.js"
 }

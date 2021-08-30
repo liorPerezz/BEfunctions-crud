@@ -5,11 +5,8 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": [
-        "post"
-      ],
-      "route": "test/"
-
+      "methods": ["get"],
+      "route": "group/{groupId}"
     },
     {
       "type": "http",
@@ -17,5 +14,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/CreatePerson/index.js"
+  "scriptFile": "../dist/FindGroup/index.js"
 }

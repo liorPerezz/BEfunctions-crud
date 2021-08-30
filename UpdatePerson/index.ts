@@ -8,8 +8,9 @@ const updatePerson: AzureFunction = async function (context: Context, req: HttpR
        await getConnection();
       const currentPersonId = context.bindingData.personId;
        const updatedPerson = req.body
-       const ppp=  await PersonModel.findByIdAndUpdate(currentPersonId,updatedPerson,{new:true}).exec() 
-       console.log('',ppp)
+       context.bindings.res={
+         body:  await PersonModel.findByIdAndUpdate(currentPersonId,updatedPerson,{new:true}).exec() 
+       }
      }
    catch(err){
        console.log('error');

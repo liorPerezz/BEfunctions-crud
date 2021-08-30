@@ -10,7 +10,9 @@ const updateGroup: AzureFunction = async function (context: Context, req: HttpRe
       const currentGroupId = context.bindingData.groupId;
        const updatedGroup = req.body
        
-       const ppp=  await GroupModel.findByIdAndUpdate(currentGroupId,updatedGroup,{new:true}).exec() 
+      context.bindings.res = {
+        body:await GroupModel.findByIdAndUpdate(currentGroupId,updatedGroup,{new:true}).exec()
+      } 
      }
    catch(err){
        console.log('error');

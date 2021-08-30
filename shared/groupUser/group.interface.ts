@@ -1,10 +1,10 @@
 import * as mongoose from 'mongoose';
-
-export interface IPerson {
-  name: string;
-  id: string;
-  inGroups: string[];
-}
+import {IPerson} from '../personUser/person.interface'
+// export interface IPerson {
+//   name: string;
+//   id: string;
+//   inGroups: string[];
+// }
 
 export interface IGroup {
   id: string;
